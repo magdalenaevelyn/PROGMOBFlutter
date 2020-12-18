@@ -43,28 +43,28 @@ class _TugasPertemuan8State extends State<TugasPertemuan8> {
                 //   child: new Icon(Icons.person),
                 // ),
                 new Expanded(
-                    child: new Container(
-                      padding: EdgeInsets.all(14.0),
-                      child: new TextFormField(
-                        controller: _text,
-                        decoration: new InputDecoration(
-                            icon: const Icon(Icons.person),
-                            labelText: "Nama Lengkap",
-                            hintText: "contoh: Argo Uchiha",
-                            border: OutlineInputBorder(
-                              borderRadius: new BorderRadius.circular(5),
-                            ),
-                            // labelText: 'Enter the Value',
-                            errorText: _validate ? 'Nama tidak boleh kosong' : null,
+                  child: new Container(
+                    padding: EdgeInsets.all(14.0),
+                    child: new TextFormField(
+                      controller: _text,
+                      decoration: new InputDecoration(
+                        icon: Icon(Icons.people),
+                        labelText: "Nama Lengkap",
+                        hintText: "contoh: Argo Uchiha",
+                        border: OutlineInputBorder(
+                          borderRadius: new BorderRadius.circular(5),
                         ),
-                        // validator: (value){
-                        //   if(value.isEmpty){
-                        //     return "Nama tidak boleh kosong";
-                        //   }
-                        //   return null;
-                        // },
+                        // labelText: 'Enter the Value',
+                        errorText: _validate ? 'Nama tidak boleh kosong' : null,
                       ),
+                      // validator: (value){
+                      //   if(value.isEmpty){
+                      //     return "Nama tidak boleh kosong";
+                      //   }
+                      //   return null;
+                      // },
                     ),
+                  ),
                 ),
               ],
             ),
@@ -79,8 +79,8 @@ class _TugasPertemuan8State extends State<TugasPertemuan8> {
                   _text.text.isEmpty ? _validate = true : _validate = false;
                 });
               },
-                color: Colors.blue,
-                // disabledColor: Colors.blue,
+              color: Colors.blue,
+              // disabledColor: Colors.blue,
               child: Text(
                 "Submit",
                 style: TextStyle(
@@ -91,86 +91,6 @@ class _TugasPertemuan8State extends State<TugasPertemuan8> {
           ],
         ),
       ),
-
-      // )
-      // body: Center(
-      //   child: Form(
-      //     key: _formKey,
-      //     child: Column(
-      //       children: <Widget>[
-      //         Row(
-      //           children: <Widget>[
-      //
-      //             // Image(
-      //             //   image: AssetImage('images/blue-person.png'),
-      //             //   width: 40.0,
-      //             //   height: 40.0,
-      //             // ),
-      //             TextFormField(
-      //               validator: (String value){
-      //                 if(value.isEmpty){
-      //                   return "Nama tidak boleh kosong";
-      //                 }
-      //                 return null;
-      //               },
-      //               decoration: new InputDecoration(
-      //                   icon: const Icon(Icons.person),
-      //                   labelText: "Nama Lengkap",
-      //                   hintText: "contoh: Argo Uchiha",
-      //                   border: OutlineInputBorder(
-      //                     borderRadius: new BorderRadius.circular(5),
-      //                   )
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //         Padding(
-      //           padding: EdgeInsets.symmetric(vertical: 35.0, horizontal:  7.0),
-      //         ),
-      //         Padding(
-      //           padding: EdgeInsets.all(10.0),
-      //         ),
-      //         // Image(
-      //         //   image: AssetImage('images/blue-person.png'),
-      //         //   width: 40.0,
-      //         //   height: 40.0,
-      //         // ),
-      //         TextFormField(
-      //           validator: (String value){
-      //             if(value.isEmpty){
-      //               return "Nama tidak boleh kosong";
-      //             }
-      //             return null;
-      //           },
-      //           decoration: new InputDecoration(
-      //               icon: const Icon(Icons.person),
-      //               labelText: "Nama Lengkap",
-      //               hintText: "contoh: Argo Uchiha",
-      //               border: OutlineInputBorder(
-      //                 borderRadius: new BorderRadius.circular(5),
-      //               )
-      //           ),
-      //         ),
-      //         Padding(
-      //           padding: EdgeInsets.all(1.0),
-      //         ),
-      //         RaisedButton(
-      //           onPressed: (){
-      //             if(_formKey.currentState.validate());
-      //           },
-      //           color: Colors.blue,
-      //           disabledColor: Colors.blue,
-      //           child: Text(
-      //             "Submit",
-      //             style: TextStyle(
-      //                 color: Colors.white
-      //             ),
-      //           ),
-      //         )
-      //       ],
-      //     ),
-      //   )
-      // ),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: _incrementCounter,
       //   tooltip: 'Increment',

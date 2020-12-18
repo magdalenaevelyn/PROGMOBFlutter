@@ -20,7 +20,11 @@
 // }
 import 'package:flutter/material.dart';
 import 'package:progmob_flutter/pertemuan1.dart';
+import 'package:progmob_flutter/pertemuan2.dart';
+import 'package:progmob_flutter/splashscreen.dart';
 import 'package:progmob_flutter/tugaspertemuan8.dart';
+import 'package:progmob_flutter/tugaspertemuan8cara_argo.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,7 +36,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.cyan,
+        // primarySwatch: kPrimaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // Tugas Hello World
@@ -40,7 +45,8 @@ class MyApp extends StatelessWidget {
       // Video Pertemuan 8
       // home: Pertemuan1(title: "Home Page Buatan Sendiri"),
       // Tugas Pertemuan 8
-      home: TugasPertemuan8(title: "Tugas Pertemuan 1"),
+      // home: TugasPertemuan8(title: "Tugas Pertemuan 1"),
+      home: SplashScreen(),
     );
   }
 }
@@ -62,6 +68,22 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void navigateLogin() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    int isLogin = pref.getInt("is_login");
+    if(isLogin == 1){
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Pertemuan2(title: "Halo Push Pertemuan 2",)),
+      );
+    }
+  }
+
+  @override
+  void initState() {
+    navigateLogin();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,11 +95,26 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Hello Magdalena Evelyn",
+              "Hello World",
             ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            // VIDEO PERTEMUAN 9
+            RaisedButton(
+              child: Text(
+                'Login'
+              ),
+                onPressed: () async {
+                SharedPreferences pref = await SharedPreferences.getInstance();
+                // login = 1; logout = 0
+                await pref.setInt("is_login", 1);
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => Pertemuan2(title: "Halo Push Pertemuan 2",)),
+                  );
+                }
             )
           ],
         ),
